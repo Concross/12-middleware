@@ -2,7 +2,7 @@
 
 let error = {};
 
-error.notFound = (req, res, next) => {
+let notFound = (req, res, next) => {
   res.status(404).send('404 ERROR - resource not found');
   next();
 };
@@ -17,6 +17,6 @@ error.badRequest = (req, res, next) => {
   next();
 };
 
-export default error;
+export default notFound;
 
 

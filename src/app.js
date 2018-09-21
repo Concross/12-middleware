@@ -2,17 +2,19 @@
 
 import express from 'express';
 import morgan from 'morgan';
-import error from './middleware/error';
+import modelFinder from './middleware/modelFinder';
+import customerRouter from './api/customersRouter';
+import notFound from './middleware/notFound';
 
 let app = express();
 
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(customerRouter);
+// app.use(modelFinder);
 // ROUTER HERE
-
-// app.use(error);
+app.use(notFound);
 
 let isRunning = false;
 

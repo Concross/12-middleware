@@ -4,7 +4,7 @@
   "description": "Middleware lab",
   "main": "index.js",
   "scripts": {
-    "watch": "DEBUG=express:router nodemon index.js",
+    "watch": "DEBUG=express:router nodemon index.js --ignore ./src/data/",
     "test": "jest **/*.test.js"
   },
   "jest": {
@@ -26,6 +26,7 @@
   "homepage": "https://github.com/Concross/12-middleware#readme",
   "dependencies": {
     "express": "^4.16.3",
+    "require-dir": "^1.0.0",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
