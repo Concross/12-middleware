@@ -1,0 +1,37 @@
+{
+  "name": "12-middleware",
+  "version": "1.0.0",
+  "description": "Middleware lab",
+  "main": "index.js",
+  "scripts": {
+    "watch": "DEBUG=express:router nodemon index.js",
+    "test": "jest **/*.test.js"
+  },
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/",
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Concross/12-middleware.git"
+  },
+  "author": "Connor Crossley <cacrossley22@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Concross/12-middleware/issues"
+  },
+  "homepage": "https://github.com/Concross/12-middleware#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "dotenv": "^6.0.0",
+    "jest": "^23.6.0",
+    "morgan": "^1.9.1"
+  }
+}
