@@ -42,8 +42,22 @@ router.get(`${baseRoute}/:model/:id`, (req, res, next) => {
       })
       .catch(next);
   }
-
 });
 
+router.put(`${baseRoute}/:model/:id/:orderNum`, (req, res, next) => {
+  debug('put');
+
+  if (!req.body) {
+    next();
+
+  } else {
+
+    Customer.put(req.params.id, req.params.orderNum)
+      .then(data => {
+        res.status(200).json(data);
+      })
+      .catch(next);
+  }
+});
 
 export default router;

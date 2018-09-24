@@ -36,4 +36,24 @@ storage.get = (id) => {
   });
 };
 
+storage.put = (id, orderNum) => {
+
+  return new Promise((resolve, reject) => {
+    if (!id) { reject('Unable to update file without proper ID'); }
+
+    let file = `${databaseDir}/${id}.json`;
+
+    fs.readFile(file, (err, data) => {
+      if (err) { reject(err); }
+      let customer = JSON.parse(data);
+      customer.orderHistory.push(orderNum);
+
+      fs.writeFile(file, customer, err => {
+        if (err) { reject(err); }
+        resolve(customer);
+      });
+    });
+  });
+}
+
 export default storage;

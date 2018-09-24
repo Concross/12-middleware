@@ -20,6 +20,10 @@ class Customer {
   static get(id) {
     return storage.get(id);
   }
+
+  static put(id, orderNum) {
+    return storage.put(id, orderNum);
+  }
 }
 
 export default Customer;
