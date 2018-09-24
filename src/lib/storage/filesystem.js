@@ -21,4 +21,19 @@ storage.save = (data) => {
   });
 };
 
+storage.get = (id) => {
+
+  return new Promise((resolve, reject) => {
+    if (!id) { reject('Unable to get file without proper ID'); }
+
+    let file = `${databaseDir}/${id}.json`;
+
+    fs.readFile(file, (err, data) => {
+      if (err) { reject(err); }
+      let obj = JSON.parse(data);
+      resolve(obj);
+    });
+  });
+};
+
 export default storage;

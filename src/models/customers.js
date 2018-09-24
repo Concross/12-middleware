@@ -16,6 +16,10 @@ class Customer {
   save() {
     return storage.save(this);
   }
+
+  static get(id) {
+    return storage.get(id);
+  }
 }
 
 export default Customer;
