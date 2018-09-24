@@ -10,7 +10,6 @@ let modelFinder = (req, res, next) => {
 
     if (model && models[model] && models[model].default) {
       req.model = models[model].default;
-      console.log(req.model);
       next();
 
     } else {

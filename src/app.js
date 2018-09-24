@@ -4,6 +4,7 @@ import express from 'express';
 import morgan from 'morgan';
 import modelFinder from './middleware/modelFinder';
 import customerRouter from './api/customersRouter';
+import orderRouter from './api/ordersRouter';
 import notFound from './middleware/notFound';
 
 let app = express();
@@ -12,8 +13,8 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(customerRouter);
-// app.use(modelFinder);
-// ROUTER HERE
+app.use(orderRouter);
+app.use(modelFinder);
 app.use(notFound);
 
 let isRunning = false;

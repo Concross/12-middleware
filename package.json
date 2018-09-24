@@ -26,6 +26,7 @@
   "homepage": "https://github.com/Concross/12-middleware#readme",
   "dependencies": {
     "express": "^4.16.3",
+    "http-errors": "^1.7.1",
     "require-dir": "^1.0.0",
     "uuid": "^3.3.2"
   },
