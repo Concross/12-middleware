@@ -54,6 +54,6 @@ storage.put = (id, orderNum) => {
       });
     });
   });
-}
+};
 
 export default storage;
